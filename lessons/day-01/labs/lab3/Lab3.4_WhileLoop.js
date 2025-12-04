@@ -8,9 +8,13 @@ console.log(`Merged & Sorted: ${mergedSorted}`);
 // Method 2
 let fooArray = [1,12,16,28,34];
 let barArray = [1,13,16,27,99];
+let fooPosition = 0;
+let barPosition = 0;
+let fooLength = fooArray.length;
+let barLength = barArray.length;
 let mergedArray = [];
 
-for (; fooPosition < fooLength && barPosition < barLength;){
+while (fooPosition < fooLength && barPosition < barLength){
     const fooValue = fooArray[fooPosition];
     const barValue = barArray[fooPosition];
 
@@ -23,10 +27,13 @@ for (; fooPosition < fooLength && barPosition < barLength;){
     }
 }
 
-for (; fooPosition < fooLength; fooPosition++){
+while (fooPosition < fooLength){
     mergedArray.push(fooArray[fooPosition]);
+    fooPosition++;
 }
 
-for (; barPosition < barLength; barPosition++){
+while (barPosition < barLength){
     mergedArray.push(barArray[barPosition]);
+    barPosition++;
 }
+console.log("Merged: ", mergedArray);
